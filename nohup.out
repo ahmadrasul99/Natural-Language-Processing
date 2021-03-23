@@ -1,0 +1,12 @@
+TensorFlow installation not found - running with reduced feature set.
+E0323 21:53:15.644684 140241617589632 program.py:311] TensorBoard could not bind to port 6006, it was already in use
+ERROR: TensorBoard could not bind to port 6006, it was already in use
+TensorFlow installation not found - running with reduced feature set.
+TensorBoard 2.4.1 at http://0.0.0.0:6006/ (Press CTRL+C to quit)
+W0323 22:15:57.174094 140250352375552 plugin_event_multiplexer.py:263] Deleting accumulator '23032021215201'
+W0323 22:15:57.174523 140250352375552 plugin_event_multiplexer.py:263] Deleting accumulator '23032021214847'
+W0323 22:15:57.174575 140250352375552 plugin_event_multiplexer.py:263] Deleting accumulator '23032021221152'
+W0323 22:15:57.174614 140250352375552 plugin_event_multiplexer.py:263] Deleting accumulator '23032021214823'
+W0323 22:15:57.174650 140250352375552 plugin_event_multiplexer.py:263] Deleting accumulator '23032021215248'
+W0323 22:15:57.174685 140250352375552 plugin_event_multiplexer.py:263] Deleting accumulator '23032021215242'
+W0323 22:15:57.174718 140250352375552 plugin_event_multiplexer.py:263] Deleting accumulator '23032021220852'
