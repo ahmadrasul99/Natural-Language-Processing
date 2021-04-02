@@ -10,3 +10,18 @@ W0323 22:15:57.174614 140250352375552 plugin_event_multiplexer.py:263] Deleting 
 W0323 22:15:57.174650 140250352375552 plugin_event_multiplexer.py:263] Deleting accumulator '23032021215248'
 W0323 22:15:57.174685 140250352375552 plugin_event_multiplexer.py:263] Deleting accumulator '23032021215242'
 W0323 22:15:57.174718 140250352375552 plugin_event_multiplexer.py:263] Deleting accumulator '23032021220852'
+E0324 02:44:16.178659 140250316302080 _internal.py:113] 162.142.125.39 - - [24/Mar/2021 02:44:16] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x033\x98{"BYNµ±nÄ\x95\x97µ:§¯\x05rGë\x00V=\x07\x88«7Í\x98×ü\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+W0324 05:36:57.996164 140250316302080 application.py:557] path /system_api.php not found, sending 404
+W0324 05:36:58.178865 140250316302080 application.py:557] path /system_api.php not found, sending 404
+W0324 05:36:58.364165 140250316302080 application.py:557] path /c/version.js not found, sending 404
+W0324 05:36:58.545992 140250316302080 application.py:557] path /streaming/clients_live.php not found, sending 404
+W0324 05:36:58.731508 140250316302080 application.py:557] path /stalker_portal/c/version.js not found, sending 404
+W0324 05:36:58.914617 140250316302080 application.py:557] path /client_area not found, sending 404
+W0324 05:36:59.109566 140250316302080 application.py:557] path /stalker_portal/c not found, sending 404
+W0324 05:36:59.306730 140250316302080 application.py:557] path /stream/rtmp.php not found, sending 404
+E0324 14:41:31.533538 140250316302080 _internal.py:113] 162.142.125.53 - - [24/Mar/2021 14:41:31] code 400, message Bad request version ('À\x14À')
+E0325 03:36:34.552968 140249799845632 _internal.py:113] 162.142.125.38 - - [25/Mar/2021 03:36:34] code 400, message Bad request version ('À\x14À')
+E0325 05:10:11.651153 140249799845632 _internal.py:113] 185.202.0.11 - - [25/Mar/2021 05:10:11] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+E0325 11:36:21.667740 140249799845632 _internal.py:113] 141.98.10.149 - - [25/Mar/2021 11:36:21] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+E0325 11:47:04.826812 140249799845632 _internal.py:113] 185.202.0.11 - - [25/Mar/2021 11:47:04] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+TensorBoard caught SIGTERM; exiting...
