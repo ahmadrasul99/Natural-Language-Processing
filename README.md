@@ -11,4 +11,4 @@ python TransformerTranslatorTraining.py
 
 # Tensorboard
 
-Currently available at http://34.105.90.137:6006/
+Currently available at http://34.82.230.33:6006/
