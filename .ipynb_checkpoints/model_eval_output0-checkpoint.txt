@@ -1,0 +1,12 @@
+Eval Epoch: 0 Loss: 3.18 | Batches/sec: 5.57
+Eval Epoch: 1 Loss: 2.75 | Batches/sec: 5.33
+Eval Epoch: 2 Loss: 2.59 | Batches/sec: 5.25
+Eval Epoch: 3 Loss: 2.51 | Batches/sec: 5.13
+Eval Epoch: 4 Loss: 2.44 | Batches/sec: 5.11
+Eval Epoch: 5 Loss: 2.39 | Batches/sec: 5.09
+Eval Epoch: 6 Loss: 2.36 | Batches/sec: 5.11
+Eval Epoch: 7 Loss: 2.32 | Batches/sec: 5.09
+Eval Epoch: 8 Loss: 2.30 | Batches/sec: 5.09
+Eval Epoch: 9 Loss: 2.28 | Batches/sec: 5.11
+Eval Epoch: 10 Loss: 2.26 | Batches/sec: 5.09
+Eval Epoch: 11 Loss: 2.24 | Batches/sec: 5.08

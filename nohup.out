@@ -25,3 +25,925 @@ E0325 05:10:11.651153 140249799845632 _internal.py:113] 185.202.0.11 - - [25/Mar
 E0325 11:36:21.667740 140249799845632 _internal.py:113] 141.98.10.149 - - [25/Mar/2021 11:36:21] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
 E0325 11:47:04.826812 140249799845632 _internal.py:113] 185.202.0.11 - - [25/Mar/2021 11:47:04] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
 TensorBoard caught SIGTERM; exiting...
+Spawning processes
+RANK:  1
+WORLDSIZE: 2
+Inside Distributed Train
+Dist initted
+Initializing Model
+Model Loaded
+Model distributed
+Epoch:  0
+Training Loss: 4.60 | Batches/sec: 1.73 | Total batches: 100
+Epoch time:  65.52330541610718 seconds
+RANK:  0
+WORLDSIZE: 2
+Inside Distributed Train
+Dist initted
+Initializing Model
+Model Loaded
+Model distributed
+Epoch:  0
+Training Loss: 4.63 | Batches/sec: 1.73 | Total batches: 100
+Epoch time:  65.52362847328186 seconds
+Traceback (most recent call last):
+  File "TransformerTranslatorTraining.py", line 248, in <module>
+    main()
+  File "TransformerTranslatorTraining.py", line 241, in main
+    mp.spawn(distributed_train, nprocs=world_size, args=(world_size,),join=True)         
+  File "/home/eric/anaconda3/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 199, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
+  File "/home/eric/anaconda3/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 157, in start_processes
+    while not context.join():
+  File "/home/eric/anaconda3/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 118, in join
+    raise Exception(msg)
+Exception: 
+
+-- Process 0 terminated with the following error:
+Traceback (most recent call last):
+  File "/home/eric/anaconda3/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 19, in _wrap
+    fn(i, *args)
+  File "/home/eric/ConcurrentProject/TransformerTranslatorTraining.py", line 223, in distributed_train
+    train(model,optim,criterion,rank,writer,40,train_iter,valid_iter)
+  File "/home/eric/ConcurrentProject/TransformerTranslatorTraining.py", line 184, in train
+    f.write("Epoch time: " , epoch_elapsed, "seconds")
+TypeError: write() takes exactly one argument (3 given)
+
+Spawning processes
+RANK:  1
+WORLDSIZE: 2
+Inside Distributed Train
+Dist initted
+Initializing Model
+Model Loaded
+Model distributed
+Epoch:  0
+Training Loss: 4.60 | Batches/sec: 1.92 | Total batches: 100
+Epoch time:  59.166215658187866 seconds
+Eval Epoch: 0 Loss: 3.68 | Batches/sec: 5.83
+Epoch:  1
+Training Loss: 3.91 | Batches/sec: 1.54 | Total batches: 214
+Epoch time:  65.42871761322021 seconds
+Eval Epoch: 1 Loss: 3.18 | Batches/sec: 5.54
+Epoch:  2
+Training Loss: 3.56 | Batches/sec: 1.52 | Total batches: 328
+Epoch time:  65.80440640449524 seconds
+Eval Epoch: 2 Loss: 3.00 | Batches/sec: 5.45
+Epoch:  3
+Training Loss: 3.39 | Batches/sec: 1.52 | Total batches: 442
+Epoch time:  65.88851833343506 seconds
+Eval Epoch: 3 Loss: 2.90 | Batches/sec: 5.49
+Epoch:  4
+Training Loss: 3.26 | Batches/sec: 1.52 | Total batches: 556
+Epoch time:  65.95620346069336 seconds
+Eval Epoch: 4 Loss: 2.83 | Batches/sec: 5.37
+Epoch:  5
+Training Loss: 3.18 | Batches/sec: 1.51 | Total batches: 670
+Epoch time:  66.09042716026306 seconds
+Eval Epoch: 5 Loss: 2.77 | Batches/sec: 5.43
+Epoch:  6
+Training Loss: 3.12 | Batches/sec: 1.52 | Total batches: 784
+Epoch time:  65.99373483657837 seconds
+Eval Epoch: 6 Loss: 2.72 | Batches/sec: 5.47
+Epoch:  7
+Training Loss: 3.07 | Batches/sec: 1.52 | Total batches: 898
+Epoch time:  65.9887022972107 seconds
+Eval Epoch: 7 Loss: 2.69 | Batches/sec: 5.48
+Epoch:  8
+Training Loss: 3.03 | Batches/sec: 1.51 | Total batches: 1012
+Epoch time:  66.01716566085815 seconds
+Eval Epoch: 8 Loss: 2.66 | Batches/sec: 5.52
+Epoch:  9
+Training Loss: 3.00 | Batches/sec: 1.51 | Total batches: 1126
+Epoch time:  66.06282567977905 seconds
+Eval Epoch: 9 Loss: 2.63 | Batches/sec: 5.47
+Epoch:  10
+Training Loss: 2.98 | Batches/sec: 1.51 | Total batches: 1240
+Epoch time:  66.11772465705872 seconds
+Eval Epoch: 10 Loss: 2.61 | Batches/sec: 5.37
+Epoch:  11
+Training Loss: 2.95 | Batches/sec: 1.52 | Total batches: 1354
+Epoch time:  65.94800353050232 seconds
+Eval Epoch: 11 Loss: 2.59 | Batches/sec: 5.37
+Epoch:  12
+Training Loss: 2.93 | Batches/sec: 1.51 | Total batches: 1468
+Epoch time:  66.06334781646729 seconds
+Eval Epoch: 12 Loss: 2.58 | Batches/sec: 5.45
+Epoch:  13
+Training Loss: 2.91 | Batches/sec: 1.52 | Total batches: 1582
+Epoch time:  65.98536586761475 seconds
+Eval Epoch: 13 Loss: 2.56 | Batches/sec: 5.41
+Epoch:  14
+Training Loss: 2.89 | Batches/sec: 1.52 | Total batches: 1696
+Epoch time:  65.97225165367126 seconds
+Eval Epoch: 14 Loss: 2.56 | Batches/sec: 5.46
+Epoch:  15
+Training Loss: 2.88 | Batches/sec: 1.51 | Total batches: 1810
+Epoch time:  66.07653999328613 seconds
+Eval Epoch: 15 Loss: 2.53 | Batches/sec: 5.43
+Epoch:  16
+Training Loss: 2.86 | Batches/sec: 1.52 | Total batches: 1924
+Epoch time:  65.94092774391174 seconds
+Eval Epoch: 16 Loss: 2.51 | Batches/sec: 5.38
+Epoch:  17
+Training Loss: 2.85 | Batches/sec: 1.51 | Total batches: 2038
+Epoch time:  66.0752763748169 seconds
+Eval Epoch: 17 Loss: 2.50 | Batches/sec: 5.42
+Epoch:  18
+Training Loss: 2.83 | Batches/sec: 1.52 | Total batches: 2152
+Epoch time:  65.99272537231445 seconds
+Eval Epoch: 18 Loss: 2.49 | Batches/sec: 5.38
+Epoch:  19
+Training Loss: 2.82 | Batches/sec: 1.51 | Total batches: 2266
+Epoch time:  66.04225826263428 seconds
+Eval Epoch: 19 Loss: 2.48 | Batches/sec: 5.37
+Epoch:  20
+Training Loss: 2.80 | Batches/sec: 1.51 | Total batches: 2380
+Epoch time:  66.09581661224365 seconds
+Eval Epoch: 20 Loss: 2.47 | Batches/sec: 5.47
+Epoch:  21
+Training Loss: 2.79 | Batches/sec: 1.51 | Total batches: 2494
+Epoch time:  66.01628065109253 seconds
+Eval Epoch: 21 Loss: 2.45 | Batches/sec: 5.47
+Epoch:  22
+Training Loss: 2.78 | Batches/sec: 1.51 | Total batches: 2608
+Epoch time:  66.02053642272949 seconds
+Eval Epoch: 22 Loss: 2.44 | Batches/sec: 5.37
+Epoch:  23
+Training Loss: 2.76 | Batches/sec: 1.52 | Total batches: 2722
+Epoch time:  66.02271270751953 seconds
+Eval Epoch: 23 Loss: 2.42 | Batches/sec: 5.49
+Epoch:  24
+Training Loss: 2.75 | Batches/sec: 1.51 | Total batches: 2836
+Epoch time:  66.09642910957336 seconds
+Eval Epoch: 24 Loss: 2.41 | Batches/sec: 5.50
+Epoch:  25
+Training Loss: 2.74 | Batches/sec: 1.51 | Total batches: 2950
+Epoch time:  66.13250041007996 seconds
+Eval Epoch: 25 Loss: 2.40 | Batches/sec: 5.46
+Epoch:  26
+Training Loss: 2.73 | Batches/sec: 1.51 | Total batches: 3064
+Epoch time:  66.09380865097046 seconds
+Eval Epoch: 26 Loss: 2.40 | Batches/sec: 5.48
+Epoch:  27
+Training Loss: 2.72 | Batches/sec: 1.51 | Total batches: 3178
+Epoch time:  66.17490196228027 seconds
+Eval Epoch: 27 Loss: 2.38 | Batches/sec: 5.47
+Epoch:  28
+Training Loss: 2.71 | Batches/sec: 1.51 | Total batches: 3292
+Epoch time:  66.09430146217346 seconds
+Eval Epoch: 28 Loss: 2.37 | Batches/sec: 5.38
+Epoch:  29
+Training Loss: 2.70 | Batches/sec: 1.51 | Total batches: 3406
+Epoch time:  66.06454110145569 seconds
+Eval Epoch: 29 Loss: 2.35 | Batches/sec: 5.43
+Epoch:  30
+Training Loss: 2.69 | Batches/sec: 1.52 | Total batches: 3520
+Epoch time:  65.94422483444214 seconds
+Eval Epoch: 30 Loss: 2.34 | Batches/sec: 5.37
+Epoch:  31
+Training Loss: 2.68 | Batches/sec: 1.51 | Total batches: 3634
+Epoch time:  66.13145565986633 seconds
+Eval Epoch: 31 Loss: 2.33 | Batches/sec: 5.43
+Epoch:  32
+Training Loss: 2.67 | Batches/sec: 1.51 | Total batches: 3748
+Epoch time:  66.0779345035553 seconds
+Eval Epoch: 32 Loss: 2.32 | Batches/sec: 5.49
+Epoch:  33
+Training Loss: 2.66 | Batches/sec: 1.51 | Total batches: 3862
+Epoch time:  66.06233072280884 seconds
+Eval Epoch: 33 Loss: 2.31 | Batches/sec: 5.40
+Epoch:  34
+Training Loss: 2.65 | Batches/sec: 1.51 | Total batches: 3976
+Epoch time:  66.08158993721008 seconds
+Eval Epoch: 34 Loss: 2.30 | Batches/sec: 5.47
+Epoch:  35
+Training Loss: 2.64 | Batches/sec: 1.51 | Total batches: 4090
+Epoch time:  66.10522508621216 seconds
+Eval Epoch: 35 Loss: 2.29 | Batches/sec: 5.44
+Epoch:  36
+Training Loss: 2.63 | Batches/sec: 1.51 | Total batches: 4204
+Epoch time:  66.008944272995 seconds
+Eval Epoch: 36 Loss: 2.29 | Batches/sec: 5.35
+Epoch:  37
+Training Loss: 2.62 | Batches/sec: 1.52 | Total batches: 4318
+Epoch time:  65.9782247543335 seconds
+Eval Epoch: 37 Loss: 2.28 | Batches/sec: 5.43
+Epoch:  38
+Training Loss: 2.61 | Batches/sec: 1.51 | Total batches: 4432
+Epoch time:  66.0893406867981 seconds
+Eval Epoch: 38 Loss: 2.26 | Batches/sec: 5.39
+Epoch:  39
+Training Loss: 2.61 | Batches/sec: 1.51 | Total batches: 4546
+Epoch time:  66.00094437599182 seconds
+Eval Epoch: 39 Loss: 2.26 | Batches/sec: 5.40
+RANK:  0
+WORLDSIZE: 2
+Inside Distributed Train
+Dist initted
+Initializing Model
+Model Loaded
+Model distributed
+Epoch:  0
+Training Loss: 4.63 | Batches/sec: 1.92 | Total batches: 100
+Epoch time:  59.166799545288086 seconds
+Eval Epoch: 0 Loss: 3.18 | Batches/sec: 5.41
+Epoch:  1
+Training Loss: 3.96 | Batches/sec: 1.54 | Total batches: 214
+Epoch time:  65.42829632759094 seconds
+Eval Epoch: 1 Loss: 2.75 | Batches/sec: 5.12
+Epoch:  2
+Training Loss: 3.61 | Batches/sec: 1.52 | Total batches: 328
+Epoch time:  65.80531001091003 seconds
+Eval Epoch: 2 Loss: 2.59 | Batches/sec: 5.09
+Epoch:  3
+Training Loss: 3.43 | Batches/sec: 1.52 | Total batches: 442
+Epoch time:  65.88937878608704 seconds
+Eval Epoch: 3 Loss: 2.51 | Batches/sec: 5.15
+Epoch:  4
+Training Loss: 3.30 | Batches/sec: 1.52 | Total batches: 556
+Epoch time:  65.95677733421326 seconds
+Eval Epoch: 4 Loss: 2.44 | Batches/sec: 5.10
+Epoch:  5
+Training Loss: 3.22 | Batches/sec: 1.51 | Total batches: 670
+Epoch time:  66.09001231193542 seconds
+Eval Epoch: 5 Loss: 2.39 | Batches/sec: 5.09
+Epoch:  6
+Training Loss: 3.16 | Batches/sec: 1.52 | Total batches: 784
+Epoch time:  65.99277639389038 seconds
+Eval Epoch: 6 Loss: 2.36 | Batches/sec: 5.07
+Epoch:  7
+Training Loss: 3.11 | Batches/sec: 1.52 | Total batches: 898
+Epoch time:  65.98724961280823 seconds
+Eval Epoch: 7 Loss: 2.32 | Batches/sec: 5.12
+Epoch:  8
+Training Loss: 3.07 | Batches/sec: 1.51 | Total batches: 1012
+Epoch time:  66.01868677139282 seconds
+Eval Epoch: 8 Loss: 2.30 | Batches/sec: 5.13
+Epoch:  9
+Training Loss: 3.04 | Batches/sec: 1.51 | Total batches: 1126
+Epoch time:  66.0619740486145 seconds
+Eval Epoch: 9 Loss: 2.28 | Batches/sec: 5.10
+Epoch:  10
+Training Loss: 3.01 | Batches/sec: 1.51 | Total batches: 1240
+Epoch time:  66.12221813201904 seconds
+Eval Epoch: 10 Loss: 2.26 | Batches/sec: 5.12
+Epoch:  11
+Training Loss: 2.99 | Batches/sec: 1.52 | Total batches: 1354
+Epoch time:  65.9440290927887 seconds
+Eval Epoch: 11 Loss: 2.24 | Batches/sec: 5.05
+Epoch:  12
+Training Loss: 2.97 | Batches/sec: 1.51 | Total batches: 1468
+Epoch time:  66.06424903869629 seconds
+Eval Epoch: 12 Loss: 2.24 | Batches/sec: 5.11
+Epoch:  13
+Training Loss: 2.95 | Batches/sec: 1.52 | Total batches: 1582
+Epoch time:  65.98711514472961 seconds
+Eval Epoch: 13 Loss: 2.22 | Batches/sec: 5.12
+Epoch:  14
+Training Loss: 2.93 | Batches/sec: 1.52 | Total batches: 1696
+Epoch time:  65.96889519691467 seconds
+Eval Epoch: 14 Loss: 2.21 | Batches/sec: 5.12
+Epoch:  15
+Training Loss: 2.91 | Batches/sec: 1.51 | Total batches: 1810
+Epoch time:  66.07859992980957 seconds
+Eval Epoch: 15 Loss: 2.19 | Batches/sec: 5.07
+Epoch:  16
+Training Loss: 2.90 | Batches/sec: 1.52 | Total batches: 1924
+Epoch time:  65.94087171554565 seconds
+Eval Epoch: 16 Loss: 2.18 | Batches/sec: 5.11
+Epoch:  17
+Training Loss: 2.88 | Batches/sec: 1.51 | Total batches: 2038
+Epoch time:  66.07766819000244 seconds
+Eval Epoch: 17 Loss: 2.16 | Batches/sec: 5.12
+Epoch:  18
+Training Loss: 2.87 | Batches/sec: 1.51 | Total batches: 2152
+Epoch time:  65.99100661277771 seconds
+Eval Epoch: 18 Loss: 2.16 | Batches/sec: 5.07
+Epoch:  19
+Training Loss: 2.85 | Batches/sec: 1.52 | Total batches: 2266
+Epoch time:  66.04265689849854 seconds
+Eval Epoch: 19 Loss: 2.15 | Batches/sec: 5.10
+Epoch:  20
+Training Loss: 2.84 | Batches/sec: 1.51 | Total batches: 2380
+Epoch time:  66.09116649627686 seconds
+Eval Epoch: 20 Loss: 2.13 | Batches/sec: 5.09
+Epoch:  21
+Training Loss: 2.82 | Batches/sec: 1.51 | Total batches: 2494
+Epoch time:  66.01994824409485 seconds
+Eval Epoch: 21 Loss: 2.12 | Batches/sec: 5.09
+Epoch:  22
+Training Loss: 2.81 | Batches/sec: 1.51 | Total batches: 2608
+Epoch time:  66.02418327331543 seconds
+Eval Epoch: 22 Loss: 2.12 | Batches/sec: 5.05
+Epoch:  23
+Training Loss: 2.80 | Batches/sec: 1.52 | Total batches: 2722
+Epoch time:  66.01558041572571 seconds
+Eval Epoch: 23 Loss: 2.10 | Batches/sec: 5.10
+Epoch:  24
+Training Loss: 2.79 | Batches/sec: 1.51 | Total batches: 2836
+Epoch time:  66.0973014831543 seconds
+Eval Epoch: 24 Loss: 2.09 | Batches/sec: 5.11
+Epoch:  25
+Training Loss: 2.77 | Batches/sec: 1.51 | Total batches: 2950
+Epoch time:  66.13143420219421 seconds
+Eval Epoch: 25 Loss: 2.08 | Batches/sec: 5.08
+Epoch:  26
+Training Loss: 2.76 | Batches/sec: 1.51 | Total batches: 3064
+Epoch time:  66.09499001502991 seconds
+Eval Epoch: 26 Loss: 2.07 | Batches/sec: 5.09
+Epoch:  27
+Training Loss: 2.75 | Batches/sec: 1.51 | Total batches: 3178
+Epoch time:  66.17525029182434 seconds
+Eval Epoch: 27 Loss: 2.06 | Batches/sec: 5.07
+Epoch:  28
+Training Loss: 2.74 | Batches/sec: 1.51 | Total batches: 3292
+Epoch time:  66.094735622406 seconds
+Eval Epoch: 28 Loss: 2.05 | Batches/sec: 5.06
+Epoch:  29
+Training Loss: 2.73 | Batches/sec: 1.51 | Total batches: 3406
+Epoch time:  66.0648546218872 seconds
+Eval Epoch: 29 Loss: 2.04 | Batches/sec: 5.09
+Epoch:  30
+Training Loss: 2.72 | Batches/sec: 1.52 | Total batches: 3520
+Epoch time:  65.94704842567444 seconds
+Eval Epoch: 30 Loss: 2.03 | Batches/sec: 5.12
+Epoch:  31
+Training Loss: 2.71 | Batches/sec: 1.51 | Total batches: 3634
+Epoch time:  66.13047361373901 seconds
+Eval Epoch: 31 Loss: 2.02 | Batches/sec: 5.10
+Epoch:  32
+Training Loss: 2.70 | Batches/sec: 1.51 | Total batches: 3748
+Epoch time:  66.07276630401611 seconds
+Eval Epoch: 32 Loss: 2.01 | Batches/sec: 5.08
+Epoch:  33
+Training Loss: 2.69 | Batches/sec: 1.51 | Total batches: 3862
+Epoch time:  66.07025408744812 seconds
+Eval Epoch: 33 Loss: 2.01 | Batches/sec: 5.08
+Epoch:  34
+Training Loss: 2.68 | Batches/sec: 1.51 | Total batches: 3976
+Epoch time:  66.07749915122986 seconds
+Eval Epoch: 34 Loss: 1.99 | Batches/sec: 5.08
+Epoch:  35
+Training Loss: 2.67 | Batches/sec: 1.51 | Total batches: 4090
+Epoch time:  66.10584163665771 seconds
+Eval Epoch: 35 Loss: 1.99 | Batches/sec: 5.10
+Epoch:  36
+Training Loss: 2.66 | Batches/sec: 1.51 | Total batches: 4204
+Epoch time:  66.00935649871826 seconds
+Eval Epoch: 36 Loss: 1.99 | Batches/sec: 5.09
+Epoch:  37
+Training Loss: 2.65 | Batches/sec: 1.52 | Total batches: 4318
+Epoch time:  65.97935247421265 seconds
+Eval Epoch: 37 Loss: 1.98 | Batches/sec: 5.08
+Epoch:  38
+Training Loss: 2.64 | Batches/sec: 1.51 | Total batches: 4432
+Epoch time:  66.08995652198792 seconds
+Eval Epoch: 38 Loss: 1.97 | Batches/sec: 5.09
+Epoch:  39
+Training Loss: 2.64 | Batches/sec: 1.51 | Total batches: 4546
+Epoch time:  65.99849462509155 seconds
+Eval Epoch: 39 Loss: 1.96 | Batches/sec: 5.08
+Spawning processes
+RANK:  1
+WORLDSIZE: 2
+Inside Distributed Train
+Dist initted
+Initializing Model
+Model Loaded
+Model distributed
+Epoch:  0
+Training Loss: 4.60 | Batches/sec: 1.94 | Total batches: 100
+Epoch time:  58.45658469200134 seconds
+Eval Epoch: 0 Loss: 3.68 | Batches/sec: 5.92
+Epoch:  1
+Training Loss: 3.91 | Batches/sec: 1.60 | Total batches: 214
+Epoch time:  63.347326040267944 seconds
+Eval Epoch: 1 Loss: 3.18 | Batches/sec: 5.20
+Epoch:  2
+Training Loss: 3.56 | Batches/sec: 1.53 | Total batches: 328
+Epoch time:  65.24354243278503 seconds
+Eval Epoch: 2 Loss: 3.00 | Batches/sec: 5.52
+Epoch:  3
+Training Loss: 3.39 | Batches/sec: 1.52 | Total batches: 442
+Epoch time:  65.69768595695496 seconds
+Eval Epoch: 3 Loss: 2.90 | Batches/sec: 5.48
+Epoch:  4
+Training Loss: 3.26 | Batches/sec: 1.52 | Total batches: 556
+Epoch time:  66.01598644256592 seconds
+Eval Epoch: 4 Loss: 2.83 | Batches/sec: 5.35
+Epoch:  5
+Training Loss: 3.18 | Batches/sec: 1.51 | Total batches: 670
+Epoch time:  66.03645706176758 seconds
+Eval Epoch: 5 Loss: 2.77 | Batches/sec: 5.52
+Epoch:  6
+Training Loss: 3.12 | Batches/sec: 1.51 | Total batches: 784
+Epoch time:  66.15582752227783 seconds
+Eval Epoch: 6 Loss: 2.72 | Batches/sec: 5.45
+Epoch:  7
+Training Loss: 3.07 | Batches/sec: 1.51 | Total batches: 898
+Epoch time:  66.07399010658264 seconds
+Eval Epoch: 7 Loss: 2.69 | Batches/sec: 5.46
+Epoch:  8
+Training Loss: 3.03 | Batches/sec: 1.51 | Total batches: 1012
+Epoch time:  66.1161298751831 seconds
+Eval Epoch: 8 Loss: 2.66 | Batches/sec: 5.47
+Epoch:  9
+Training Loss: 3.00 | Batches/sec: 1.51 | Total batches: 1126
+Epoch time:  66.09523582458496 seconds
+Eval Epoch: 9 Loss: 2.63 | Batches/sec: 5.46
+Epoch:  10
+Training Loss: 2.98 | Batches/sec: 1.51 | Total batches: 1240
+Epoch time:  66.05593180656433 seconds
+Eval Epoch: 10 Loss: 2.61 | Batches/sec: 5.45
+Epoch:  11
+Training Loss: 2.95 | Batches/sec: 1.52 | Total batches: 1354
+Epoch time:  65.99821019172668 seconds
+Eval Epoch: 11 Loss: 2.59 | Batches/sec: 5.43
+Epoch:  12
+Training Loss: 2.93 | Batches/sec: 1.52 | Total batches: 1468
+Epoch time:  66.01487517356873 seconds
+Eval Epoch: 12 Loss: 2.58 | Batches/sec: 5.43
+Epoch:  13
+Training Loss: 2.91 | Batches/sec: 1.51 | Total batches: 1582
+Epoch time:  66.1187391281128 seconds
+Eval Epoch: 13 Loss: 2.56 | Batches/sec: 5.48
+Epoch:  14
+Training Loss: 2.89 | Batches/sec: 1.51 | Total batches: 1696
+Epoch time:  66.04224801063538 seconds
+Eval Epoch: 14 Loss: 2.56 | Batches/sec: 5.49
+Epoch:  15
+Training Loss: 2.88 | Batches/sec: 1.51 | Total batches: 1810
+Epoch time:  66.09789323806763 seconds
+Eval Epoch: 15 Loss: 2.53 | Batches/sec: 5.48
+Epoch:  16
+Training Loss: 2.86 | Batches/sec: 1.52 | Total batches: 1924
+Epoch time:  65.9670193195343 seconds
+Eval Epoch: 16 Loss: 2.51 | Batches/sec: 5.45
+Epoch:  17
+Training Loss: 2.85 | Batches/sec: 1.52 | Total batches: 2038
+Epoch time:  65.984304189682 seconds
+Eval Epoch: 17 Loss: 2.50 | Batches/sec: 5.49
+Epoch:  18
+Training Loss: 2.83 | Batches/sec: 1.51 | Total batches: 2152
+Epoch time:  66.08253574371338 seconds
+Eval Epoch: 18 Loss: 2.49 | Batches/sec: 5.49
+Epoch:  19
+Training Loss: 2.82 | Batches/sec: 1.51 | Total batches: 2266
+Epoch time:  66.10106325149536 seconds
+Eval Epoch: 19 Loss: 2.48 | Batches/sec: 5.46
+Epoch:  20
+Training Loss: 2.80 | Batches/sec: 1.51 | Total batches: 2380
+Epoch time:  66.10154485702515 seconds
+Eval Epoch: 20 Loss: 2.47 | Batches/sec: 5.40
+Epoch:  21
+Training Loss: 2.79 | Batches/sec: 1.51 | Total batches: 2494
+Epoch time:  66.11074638366699 seconds
+Eval Epoch: 21 Loss: 2.45 | Batches/sec: 5.50
+Epoch:  22
+Training Loss: 2.78 | Batches/sec: 1.52 | Total batches: 2608
+Epoch time:  66.00662279129028 seconds
+Eval Epoch: 22 Loss: 2.44 | Batches/sec: 5.39
+Epoch:  23
+Training Loss: 2.76 | Batches/sec: 1.51 | Total batches: 2722
+Epoch time:  66.09272742271423 seconds
+Eval Epoch: 23 Loss: 2.42 | Batches/sec: 5.45
+Epoch:  24
+Training Loss: 2.75 | Batches/sec: 1.51 | Total batches: 2836
+Epoch time:  66.1868724822998 seconds
+Eval Epoch: 24 Loss: 2.41 | Batches/sec: 5.46
+Epoch:  25
+Training Loss: 2.74 | Batches/sec: 1.51 | Total batches: 2950
+Epoch time:  65.99793910980225 seconds
+Eval Epoch: 25 Loss: 2.40 | Batches/sec: 5.48
+Epoch:  26
+Training Loss: 2.73 | Batches/sec: 1.51 | Total batches: 3064
+Epoch time:  66.0899658203125 seconds
+Eval Epoch: 26 Loss: 2.40 | Batches/sec: 5.41
+Epoch:  27
+Training Loss: 2.72 | Batches/sec: 1.51 | Total batches: 3178
+Epoch time:  66.135990858078 seconds
+Eval Epoch: 27 Loss: 2.38 | Batches/sec: 5.46
+Epoch:  28
+Training Loss: 2.71 | Batches/sec: 1.51 | Total batches: 3292
+Epoch time:  66.127357006073 seconds
+Eval Epoch: 28 Loss: 2.37 | Batches/sec: 5.44
+Epoch:  29
+Training Loss: 2.70 | Batches/sec: 1.51 | Total batches: 3406
+Epoch time:  66.19428324699402 seconds
+Eval Epoch: 29 Loss: 2.35 | Batches/sec: 5.39
+Epoch:  30
+Training Loss: 2.69 | Batches/sec: 1.51 | Total batches: 3520
+Epoch time:  66.00693917274475 seconds
+Eval Epoch: 30 Loss: 2.34 | Batches/sec: 5.53
+Epoch:  31
+Training Loss: 2.68 | Batches/sec: 1.52 | Total batches: 3634
+Epoch time:  65.97603249549866 seconds
+Eval Epoch: 31 Loss: 2.33 | Batches/sec: 5.43
+Epoch:  32
+Training Loss: 2.67 | Batches/sec: 1.51 | Total batches: 3748
+Epoch time:  66.09018659591675 seconds
+Eval Epoch: 32 Loss: 2.32 | Batches/sec: 5.45
+Epoch:  33
+Training Loss: 2.66 | Batches/sec: 1.51 | Total batches: 3862
+Epoch time:  66.081463098526 seconds
+Eval Epoch: 33 Loss: 2.31 | Batches/sec: 5.43
+Epoch:  34
+Training Loss: 2.65 | Batches/sec: 1.52 | Total batches: 3976
+Epoch time:  66.04495978355408 seconds
+Eval Epoch: 34 Loss: 2.30 | Batches/sec: 5.44
+Epoch:  35
+Training Loss: 2.64 | Batches/sec: 1.51 | Total batches: 4090
+Epoch time:  66.14349961280823 seconds
+Eval Epoch: 35 Loss: 2.29 | Batches/sec: 5.50
+Epoch:  36
+Training Loss: 2.63 | Batches/sec: 1.51 | Total batches: 4204
+Epoch time:  66.09959435462952 seconds
+Eval Epoch: 36 Loss: 2.29 | Batches/sec: 5.45
+Epoch:  37
+Training Loss: 2.62 | Batches/sec: 1.51 | Total batches: 4318
+Epoch time:  66.07111835479736 seconds
+Eval Epoch: 37 Loss: 2.28 | Batches/sec: 5.45
+Epoch:  38
+Training Loss: 2.61 | Batches/sec: 1.51 | Total batches: 4432
+Epoch time:  66.20675253868103 seconds
+Eval Epoch: 38 Loss: 2.26 | Batches/sec: 5.39
+Epoch:  39
+Training Loss: 2.61 | Batches/sec: 1.51 | Total batches: 4546
+Epoch time:  66.16568422317505 seconds
+Eval Epoch: 39 Loss: 2.26 | Batches/sec: 5.38
+RANK:  0
+WORLDSIZE: 2
+Inside Distributed Train
+Dist initted
+Initializing Model
+Model Loaded
+Model distributed
+Epoch:  0
+Training Loss: 4.63 | Batches/sec: 1.94 | Total batches: 100
+Epoch time:  58.45486283302307 seconds
+Eval Epoch: 0 Loss: 3.18 | Batches/sec: 5.57
+Epoch:  1
+Training Loss: 3.96 | Batches/sec: 1.60 | Total batches: 214
+Epoch time:  63.34825038909912 seconds
+Eval Epoch: 1 Loss: 2.75 | Batches/sec: 5.33
+Epoch:  2
+Training Loss: 3.61 | Batches/sec: 1.53 | Total batches: 328
+Epoch time:  65.2443904876709 seconds
+Eval Epoch: 2 Loss: 2.59 | Batches/sec: 5.25
+Epoch:  3
+Training Loss: 3.43 | Batches/sec: 1.52 | Total batches: 442
+Epoch time:  65.69847893714905 seconds
+Eval Epoch: 3 Loss: 2.51 | Batches/sec: 5.13
+Epoch:  4
+Training Loss: 3.30 | Batches/sec: 1.52 | Total batches: 556
+Epoch time:  66.01624274253845 seconds
+Eval Epoch: 4 Loss: 2.44 | Batches/sec: 5.11
+Epoch:  5
+Training Loss: 3.22 | Batches/sec: 1.51 | Total batches: 670
+Epoch time:  66.03441023826599 seconds
+Eval Epoch: 5 Loss: 2.39 | Batches/sec: 5.09
+Epoch:  6
+Training Loss: 3.16 | Batches/sec: 1.51 | Total batches: 784
+Epoch time:  66.15724110603333 seconds
+Eval Epoch: 6 Loss: 2.36 | Batches/sec: 5.11
+Epoch:  7
+Training Loss: 3.11 | Batches/sec: 1.51 | Total batches: 898
+Epoch time:  66.07431626319885 seconds
+Eval Epoch: 7 Loss: 2.32 | Batches/sec: 5.09
+Epoch:  8
+Training Loss: 3.07 | Batches/sec: 1.51 | Total batches: 1012
+Epoch time:  66.1139817237854 seconds
+Eval Epoch: 8 Loss: 2.30 | Batches/sec: 5.09
+Epoch:  9
+Training Loss: 3.04 | Batches/sec: 1.51 | Total batches: 1126
+Epoch time:  66.09660220146179 seconds
+Eval Epoch: 9 Loss: 2.28 | Batches/sec: 5.11
+Epoch:  10
+Training Loss: 3.01 | Batches/sec: 1.51 | Total batches: 1240
+Epoch time:  66.05529165267944 seconds
+Eval Epoch: 10 Loss: 2.26 | Batches/sec: 5.09
+Epoch:  11
+Training Loss: 2.99 | Batches/sec: 1.52 | Total batches: 1354
+Epoch time:  65.99836659431458 seconds
+Eval Epoch: 11 Loss: 2.24 | Batches/sec: 5.08
+Epoch:  12
+Training Loss: 2.97 | Batches/sec: 1.52 | Total batches: 1468
+Epoch time:  66.01546430587769 seconds
+Eval Epoch: 12 Loss: 2.24 | Batches/sec: 5.09
+Epoch:  13
+Training Loss: 2.95 | Batches/sec: 1.51 | Total batches: 1582
+Epoch time:  66.1179769039154 seconds
+Eval Epoch: 13 Loss: 2.22 | Batches/sec: 5.12
+Epoch:  14
+Training Loss: 2.93 | Batches/sec: 1.51 | Total batches: 1696
+Epoch time:  66.04262566566467 seconds
+Eval Epoch: 14 Loss: 2.21 | Batches/sec: 5.10
+Epoch:  15
+Training Loss: 2.91 | Batches/sec: 1.51 | Total batches: 1810
+Epoch time:  66.0974657535553 seconds
+Eval Epoch: 15 Loss: 2.19 | Batches/sec: 5.10
+Epoch:  16
+Training Loss: 2.90 | Batches/sec: 1.52 | Total batches: 1924
+Epoch time:  65.96840405464172 seconds
+Eval Epoch: 16 Loss: 2.18 | Batches/sec: 5.09
+Epoch:  17
+Training Loss: 2.88 | Batches/sec: 1.52 | Total batches: 2038
+Epoch time:  65.98435306549072 seconds
+Eval Epoch: 17 Loss: 2.16 | Batches/sec: 5.10
+Epoch:  18
+Training Loss: 2.87 | Batches/sec: 1.51 | Total batches: 2152
+Epoch time:  66.08220505714417 seconds
+Eval Epoch: 18 Loss: 2.16 | Batches/sec: 5.11
+Epoch:  19
+Training Loss: 2.85 | Batches/sec: 1.51 | Total batches: 2266
+Epoch time:  66.10231924057007 seconds
+Eval Epoch: 19 Loss: 2.15 | Batches/sec: 5.11
+Epoch:  20
+Training Loss: 2.84 | Batches/sec: 1.51 | Total batches: 2380
+Epoch time:  66.10283088684082 seconds
+Eval Epoch: 20 Loss: 2.13 | Batches/sec: 5.12
+Epoch:  21
+Training Loss: 2.82 | Batches/sec: 1.51 | Total batches: 2494
+Epoch time:  66.10829186439514 seconds
+Eval Epoch: 21 Loss: 2.12 | Batches/sec: 5.11
+Epoch:  22
+Training Loss: 2.81 | Batches/sec: 1.52 | Total batches: 2608
+Epoch time:  66.01001262664795 seconds
+Eval Epoch: 22 Loss: 2.12 | Batches/sec: 5.11
+Epoch:  23
+Training Loss: 2.80 | Batches/sec: 1.51 | Total batches: 2722
+Epoch time:  66.08959078788757 seconds
+Eval Epoch: 23 Loss: 2.10 | Batches/sec: 5.12
+Epoch:  24
+Training Loss: 2.79 | Batches/sec: 1.51 | Total batches: 2836
+Epoch time:  66.18549656867981 seconds
+Eval Epoch: 24 Loss: 2.09 | Batches/sec: 5.08
+Epoch:  25
+Training Loss: 2.77 | Batches/sec: 1.51 | Total batches: 2950
+Epoch time:  65.999751329422 seconds
+Eval Epoch: 25 Loss: 2.08 | Batches/sec: 5.09
+Epoch:  26
+Training Loss: 2.76 | Batches/sec: 1.51 | Total batches: 3064
+Epoch time:  66.08892321586609 seconds
+Eval Epoch: 26 Loss: 2.07 | Batches/sec: 5.07
+Epoch:  27
+Training Loss: 2.75 | Batches/sec: 1.51 | Total batches: 3178
+Epoch time:  66.1347804069519 seconds
+Eval Epoch: 27 Loss: 2.06 | Batches/sec: 5.06
+Epoch:  28
+Training Loss: 2.74 | Batches/sec: 1.51 | Total batches: 3292
+Epoch time:  66.1290225982666 seconds
+Eval Epoch: 28 Loss: 2.05 | Batches/sec: 5.08
+Epoch:  29
+Training Loss: 2.73 | Batches/sec: 1.51 | Total batches: 3406
+Epoch time:  66.19509935379028 seconds
+Eval Epoch: 29 Loss: 2.04 | Batches/sec: 5.06
+Epoch:  30
+Training Loss: 2.72 | Batches/sec: 1.51 | Total batches: 3520
+Epoch time:  66.00673985481262 seconds
+Eval Epoch: 30 Loss: 2.03 | Batches/sec: 5.13
+Epoch:  31
+Training Loss: 2.71 | Batches/sec: 1.52 | Total batches: 3634
+Epoch time:  65.97395849227905 seconds
+Eval Epoch: 31 Loss: 2.02 | Batches/sec: 5.07
+Epoch:  32
+Training Loss: 2.70 | Batches/sec: 1.51 | Total batches: 3748
+Epoch time:  66.09070038795471 seconds
+Eval Epoch: 32 Loss: 2.01 | Batches/sec: 5.07
+Epoch:  33
+Training Loss: 2.69 | Batches/sec: 1.51 | Total batches: 3862
+Epoch time:  66.08315062522888 seconds
+Eval Epoch: 33 Loss: 2.01 | Batches/sec: 5.09
+Epoch:  34
+Training Loss: 2.68 | Batches/sec: 1.52 | Total batches: 3976
+Epoch time:  66.04425477981567 seconds
+Eval Epoch: 34 Loss: 1.99 | Batches/sec: 5.09
+Epoch:  35
+Training Loss: 2.67 | Batches/sec: 1.51 | Total batches: 4090
+Epoch time:  66.14111566543579 seconds
+Eval Epoch: 35 Loss: 1.99 | Batches/sec: 5.08
+Epoch:  36
+Training Loss: 2.66 | Batches/sec: 1.51 | Total batches: 4204
+Epoch time:  66.10231566429138 seconds
+Eval Epoch: 36 Loss: 1.99 | Batches/sec: 5.09
+Epoch:  37
+Training Loss: 2.65 | Batches/sec: 1.51 | Total batches: 4318
+Epoch time:  66.07090997695923 seconds
+Eval Epoch: 37 Loss: 1.98 | Batches/sec: 5.11
+Epoch:  38
+Training Loss: 2.64 | Batches/sec: 1.51 | Total batches: 4432
+Epoch time:  66.20657539367676 seconds
+Eval Epoch: 38 Loss: 1.97 | Batches/sec: 5.08
+Epoch:  39
+Training Loss: 2.64 | Batches/sec: 1.51 | Total batches: 4546
+Epoch time:  66.16682600975037 seconds
+Eval Epoch: 39 Loss: 1.96 | Batches/sec: 5.07
+Spawning processes
+RANK:  0
+WORLDSIZE: 1
+Inside Distributed Train
+Dist initted
+Initializing Model
+Model Loaded
+Model distributed
+Epoch:  0
+Training Loss: 4.62 | Batches/sec: 2.15 | Total batches: 100
+Training Loss: 3.50 | Batches/sec: 2.12 | Total batches: 200
+Epoch time:  106.56091785430908 seconds
+Eval Epoch: 0 Loss: 3.02 | Batches/sec: 5.78
+Epoch:  1
+Training Loss: 4.02 | Batches/sec: 1.56 | Total batches: 327
+Training Loss: 3.01 | Batches/sec: 1.99 | Total batches: 427
+Epoch time:  115.28146505355835 seconds
+Eval Epoch: 1 Loss: 2.74 | Batches/sec: 5.47
+Epoch:  2
+Training Loss: 3.67 | Batches/sec: 1.48 | Total batches: 554
+Training Loss: 2.82 | Batches/sec: 1.95 | Total batches: 654
+Epoch time:  118.75992012023926 seconds
+Eval Epoch: 2 Loss: 2.62 | Batches/sec: 5.46
+Epoch:  3
+Training Loss: 3.50 | Batches/sec: 1.48 | Total batches: 781
+Training Loss: 2.72 | Batches/sec: 1.94 | Total batches: 881
+Epoch time:  118.97220945358276 seconds
+Eval Epoch: 3 Loss: 2.55 | Batches/sec: 5.43
+Epoch:  4
+Training Loss: 3.41 | Batches/sec: 1.48 | Total batches: 1008
+Training Loss: 2.66 | Batches/sec: 1.94 | Total batches: 1108
+Epoch time:  119.12803912162781 seconds
+Eval Epoch: 4 Loss: 2.50 | Batches/sec: 5.46
+Epoch:  5
+Training Loss: 3.34 | Batches/sec: 1.48 | Total batches: 1235
+Training Loss: 2.61 | Batches/sec: 1.94 | Total batches: 1335
+Epoch time:  118.85258531570435 seconds
+Eval Epoch: 5 Loss: 2.46 | Batches/sec: 5.46
+Epoch:  6
+Training Loss: 3.29 | Batches/sec: 1.48 | Total batches: 1462
+Training Loss: 2.58 | Batches/sec: 1.94 | Total batches: 1562
+Epoch time:  119.17839431762695 seconds
+Eval Epoch: 6 Loss: 2.43 | Batches/sec: 5.46
+Epoch:  7
+Training Loss: 3.25 | Batches/sec: 1.48 | Total batches: 1689
+Training Loss: 2.55 | Batches/sec: 1.94 | Total batches: 1789
+Epoch time:  118.88898992538452 seconds
+Eval Epoch: 7 Loss: 2.39 | Batches/sec: 5.46
+Epoch:  8
+Training Loss: 3.21 | Batches/sec: 1.48 | Total batches: 1916
+Training Loss: 2.52 | Batches/sec: 1.95 | Total batches: 2016
+Epoch time:  118.77822780609131 seconds
+Eval Epoch: 8 Loss: 2.37 | Batches/sec: 5.47
+Epoch:  9
+Training Loss: 3.18 | Batches/sec: 1.48 | Total batches: 2143
+Training Loss: 2.49 | Batches/sec: 1.94 | Total batches: 2243
+Epoch time:  118.82454991340637 seconds
+Eval Epoch: 9 Loss: 2.34 | Batches/sec: 5.44
+Epoch:  10
+Training Loss: 3.14 | Batches/sec: 1.48 | Total batches: 2370
+Training Loss: 2.47 | Batches/sec: 1.94 | Total batches: 2470
+Epoch time:  119.1775414943695 seconds
+Eval Epoch: 10 Loss: 2.32 | Batches/sec: 5.46
+Epoch:  11
+Training Loss: 3.12 | Batches/sec: 1.48 | Total batches: 2597
+Training Loss: 2.44 | Batches/sec: 1.94 | Total batches: 2697
+Epoch time:  118.96903157234192 seconds
+Eval Epoch: 11 Loss: 2.29 | Batches/sec: 5.44
+Epoch:  12
+Training Loss: 3.09 | Batches/sec: 1.48 | Total batches: 2824
+Training Loss: 2.42 | Batches/sec: 1.94 | Total batches: 2924
+Epoch time:  118.87155532836914 seconds
+Eval Epoch: 12 Loss: 2.27 | Batches/sec: 5.50
+Epoch:  13
+Training Loss: 3.06 | Batches/sec: 1.48 | Total batches: 3051
+Training Loss: 2.40 | Batches/sec: 1.94 | Total batches: 3151
+Epoch time:  118.86800599098206 seconds
+Eval Epoch: 13 Loss: 2.25 | Batches/sec: 5.46
+Epoch:  14
+Training Loss: 3.04 | Batches/sec: 1.48 | Total batches: 3278
+Training Loss: 2.39 | Batches/sec: 1.94 | Total batches: 3378
+Epoch time:  118.87830972671509 seconds
+Eval Epoch: 14 Loss: 2.23 | Batches/sec: 5.45
+Epoch:  15
+Training Loss: 3.02 | Batches/sec: 1.48 | Total batches: 3505
+Training Loss: 2.37 | Batches/sec: 1.94 | Total batches: 3605
+Epoch time:  118.92167925834656 seconds
+Eval Epoch: 15 Loss: 2.21 | Batches/sec: 5.47
+Epoch:  16
+Training Loss: 3.00 | Batches/sec: 1.48 | Total batches: 3732
+Training Loss: 2.35 | Batches/sec: 1.94 | Total batches: 3832
+Epoch time:  118.8727433681488 seconds
+Eval Epoch: 16 Loss: 2.19 | Batches/sec: 5.46
+Epoch:  17
+Training Loss: 2.98 | Batches/sec: 1.48 | Total batches: 3959
+Training Loss: 2.33 | Batches/sec: 1.94 | Total batches: 4059
+Epoch time:  118.91382503509521 seconds
+Eval Epoch: 17 Loss: 2.17 | Batches/sec: 5.46
+Epoch:  18
+Training Loss: 2.95 | Batches/sec: 1.48 | Total batches: 4186
+Training Loss: 2.32 | Batches/sec: 1.94 | Total batches: 4286
+Epoch time:  119.2521162033081 seconds
+Eval Epoch: 18 Loss: 2.16 | Batches/sec: 5.43
+Epoch:  19
+Training Loss: 2.94 | Batches/sec: 1.48 | Total batches: 4413
+Training Loss: 2.30 | Batches/sec: 1.94 | Total batches: 4513
+Epoch time:  119.10562515258789 seconds
+Eval Epoch: 19 Loss: 2.14 | Batches/sec: 5.43
+Epoch:  20
+Training Loss: 2.92 | Batches/sec: 1.48 | Total batches: 4640
+Training Loss: 2.29 | Batches/sec: 1.94 | Total batches: 4740
+Epoch time:  118.9145438671112 seconds
+Eval Epoch: 20 Loss: 2.13 | Batches/sec: 5.44
+Epoch:  21
+Training Loss: 2.90 | Batches/sec: 1.48 | Total batches: 4867
+Training Loss: 2.28 | Batches/sec: 1.94 | Total batches: 4967
+Epoch time:  119.23171043395996 seconds
+Eval Epoch: 21 Loss: 2.11 | Batches/sec: 5.43
+Epoch:  22
+Training Loss: 2.89 | Batches/sec: 1.48 | Total batches: 5094
+Training Loss: 2.26 | Batches/sec: 1.95 | Total batches: 5194
+Epoch time:  118.82034873962402 seconds
+Eval Epoch: 22 Loss: 2.10 | Batches/sec: 5.49
+Epoch:  23
+Training Loss: 2.87 | Batches/sec: 1.48 | Total batches: 5321
+Training Loss: 2.25 | Batches/sec: 1.94 | Total batches: 5421
+Epoch time:  119.11573052406311 seconds
+Eval Epoch: 23 Loss: 2.09 | Batches/sec: 5.44
+Epoch:  24
+Training Loss: 2.86 | Batches/sec: 1.48 | Total batches: 5548
+Training Loss: 2.24 | Batches/sec: 1.94 | Total batches: 5648
+Epoch time:  119.10308384895325 seconds
+Eval Epoch: 24 Loss: 2.08 | Batches/sec: 5.43
+Epoch:  25
+Training Loss: 2.84 | Batches/sec: 1.48 | Total batches: 5775
+Training Loss: 2.23 | Batches/sec: 1.94 | Total batches: 5875
+Epoch time:  118.95011258125305 seconds
+Eval Epoch: 25 Loss: 2.07 | Batches/sec: 5.45
+Epoch:  26
+Training Loss: 2.83 | Batches/sec: 1.48 | Total batches: 6002
+Training Loss: 2.22 | Batches/sec: 1.94 | Total batches: 6102
+Epoch time:  118.91511821746826 seconds
+Eval Epoch: 26 Loss: 2.05 | Batches/sec: 5.44
+Epoch:  27
+Training Loss: 2.81 | Batches/sec: 1.48 | Total batches: 6229
+Training Loss: 2.21 | Batches/sec: 1.94 | Total batches: 6329
+Epoch time:  118.90801906585693 seconds
+Eval Epoch: 27 Loss: 2.04 | Batches/sec: 5.45
+Epoch:  28
+Training Loss: 2.80 | Batches/sec: 1.48 | Total batches: 6456
+Training Loss: 2.20 | Batches/sec: 1.94 | Total batches: 6556
+Epoch time:  118.9282705783844 seconds
+Eval Epoch: 28 Loss: 2.04 | Batches/sec: 5.45
+Epoch:  29
+Training Loss: 2.79 | Batches/sec: 1.48 | Total batches: 6683
+Training Loss: 2.19 | Batches/sec: 1.94 | Total batches: 6783
+Epoch time:  118.90067028999329 seconds
+Eval Epoch: 29 Loss: 2.03 | Batches/sec: 5.48
+Epoch:  30
+Training Loss: 2.78 | Batches/sec: 1.48 | Total batches: 6910
+Training Loss: 2.18 | Batches/sec: 1.94 | Total batches: 7010
+Epoch time:  119.06490182876587 seconds
+Eval Epoch: 30 Loss: 2.02 | Batches/sec: 5.42
+Epoch:  31
+Training Loss: 2.77 | Batches/sec: 1.48 | Total batches: 7137
+Training Loss: 2.17 | Batches/sec: 1.94 | Total batches: 7237
+Epoch time:  119.21744728088379 seconds
+Eval Epoch: 31 Loss: 2.01 | Batches/sec: 5.43
+Epoch:  32
+Training Loss: 2.76 | Batches/sec: 1.48 | Total batches: 7364
+Training Loss: 2.16 | Batches/sec: 1.95 | Total batches: 7464
+Epoch time:  118.7491660118103 seconds
+Eval Epoch: 32 Loss: 2.00 | Batches/sec: 5.47
+Epoch:  33
+Training Loss: 2.74 | Batches/sec: 1.48 | Total batches: 7591
+Training Loss: 2.15 | Batches/sec: 1.95 | Total batches: 7691
+Epoch time:  118.83748197555542 seconds
+Eval Epoch: 33 Loss: 1.99 | Batches/sec: 5.43
+Epoch:  34
+Training Loss: 2.74 | Batches/sec: 1.48 | Total batches: 7818
+Training Loss: 2.15 | Batches/sec: 1.94 | Total batches: 7918
+Epoch time:  119.07214999198914 seconds
+Eval Epoch: 34 Loss: 1.98 | Batches/sec: 5.41
+Epoch:  35
+Training Loss: 2.72 | Batches/sec: 1.48 | Total batches: 8045
+Training Loss: 2.14 | Batches/sec: 1.94 | Total batches: 8145
+Epoch time:  118.95106720924377 seconds
+Eval Epoch: 35 Loss: 1.98 | Batches/sec: 5.45
+Epoch:  36
+Training Loss: 2.71 | Batches/sec: 1.48 | Total batches: 8272
+Training Loss: 2.13 | Batches/sec: 1.94 | Total batches: 8372
+Epoch time:  118.95775938034058 seconds
+Eval Epoch: 36 Loss: 1.97 | Batches/sec: 5.43
+Epoch:  37
+Training Loss: 2.71 | Batches/sec: 1.48 | Total batches: 8499
+Training Loss: 2.12 | Batches/sec: 1.94 | Total batches: 8599
+Epoch time:  119.11726784706116 seconds
+Eval Epoch: 37 Loss: 1.96 | Batches/sec: 5.43
+Epoch:  38
+Training Loss: 2.70 | Batches/sec: 1.48 | Total batches: 8726
+Training Loss: 2.12 | Batches/sec: 1.94 | Total batches: 8826
+Epoch time:  119.00499701499939 seconds
+Eval Epoch: 38 Loss: 1.95 | Batches/sec: 5.46
+Epoch:  39
+Training Loss: 2.69 | Batches/sec: 1.48 | Total batches: 8953
+Training Loss: 2.11 | Batches/sec: 1.94 | Total batches: 9053
+Epoch time:  118.90896487236023 seconds
+Eval Epoch: 39 Loss: 1.95 | Batches/sec: 5.45

@@ -236,7 +236,7 @@ def cleanup():
     dist.destroy_process_group()
 
 def main():
-    world_size = 1
+    world_size = 2
     print("Spawning processes")
     mp.spawn(distributed_train, nprocs=world_size, args=(world_size,),join=True)         
 
